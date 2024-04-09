@@ -7,6 +7,32 @@ function ComicForm({createComic}) {
   const [issue, setIssue] = useState("")
   const [description, setDescription] = useState("")
 
+  // Chettnote: lets do a single state
+  // const [formData, setFormData]=useState({
+  //   title:'',
+  //   image_url:'',
+  //   issue:'',
+  //   description:''
+  // }) 
+  //then we will do:
+  // onChange ={setFormData({...formData, image_url:event.target.value})}
+  //function call, function decoration??
+
+  //example
+  // const [count, setCount]=useState (0)
+  // function increment(){
+  //   setCount(count+1)
+  //   setCount(count+1) // will return +1
+  // }
+  // const [count, setCount]=useState (0)
+  // function increment(){
+  //   setCount(count => count+1)
+  //   setCount(count => count+1)
+  //   setCount(count => count+1) // will return +3, accumulate
+
+
+  // }
+
   function handleSubmit(e){
     e.preventDefault()
     createComic(image_url, title, issue, description)
@@ -20,6 +46,7 @@ function ComicForm({createComic}) {
 
         <label htmlFor="image_url">Image URL: </label>
         <input name="image_url" onChange={e=>setImage_url(e.target.value)} placeholder="image" />
+ 
     
 
         <label htmlFor="title">Title: </label>
@@ -34,6 +61,8 @@ function ComicForm({createComic}) {
         <input type="submit" value="Add Issue" />
 
         console.log(image_url)
+
+
       </form>
 
     )

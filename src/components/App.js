@@ -13,7 +13,7 @@ function App() {
     setComics(comicsArray)})
   }, [])
 
-
+//this is for ComicForm, function handleSubmit
   function createComic(image_url, title, issue, description){
   fetch("http://localhost:8004/comics",{
     method:'POST',
@@ -26,7 +26,11 @@ function App() {
   .then(res=>res.json())
   .then(newComic => 
   //add greg to 
+ // here we can do something to reset the form to  ""
   setComics([...comics, newComic])
+
+  // if we create the fucntion in ComicForm, we can do this to give comics to ComicForm, or we can pass comics and setComics as props to ComicForm function: 
+  //setComics(comics =>[...comics, newComic])
 )
   }
 
@@ -44,7 +48,7 @@ function App() {
       <div className="grid with-sidebar">
 
         <div className="flex-container">
-          <ComicsContainer comics={comics} onRemove={onRemove}/>
+          <ComicsContainer comics={comics} onRemove={onRemove}/> 
         </div>
 
         <div className="sidebar">
