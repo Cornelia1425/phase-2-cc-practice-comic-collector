@@ -12,6 +12,7 @@ function App() {
   .then(comicsArray => {
     setComics(comicsArray)})
   }, [])
+  console.log("comics: ", comics)
 
 //this is for ComicForm, function handleSubmit
   function createComic(image_url, title, issue, description){

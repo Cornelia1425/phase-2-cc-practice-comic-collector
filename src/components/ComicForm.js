@@ -38,6 +38,8 @@ function ComicForm({createComic}) {
     createComic(image_url, title, issue, description)
   }
 
+  console.log("image_url: ",image_url)
+
     return (
 
       <form className="comic-form" onSubmit={handleSubmit}>
@@ -60,7 +62,7 @@ function ComicForm({createComic}) {
 
         <input type="submit" value="Add Issue" />
 
-        console.log(image_url)
+      
 
 
       </form>
